@@ -9,8 +9,7 @@ import Register from './Routes/View/Auth/Register';
 import Login from './Routes/View/Auth/Login';
 import Error from './components/404/Error';
 import './assets/scss/index.scss'
-import 'bootstrap'
-
+import 'bootstrap';
 
 function App() {
   return (
