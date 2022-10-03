@@ -8,8 +8,10 @@ import About from './Routes/View/client/about/About';
 import Register from './Routes/View/Auth/Register';
 import Login from './Routes/View/Auth/Login';
 import Error from './components/404/Error';
-import './assets/scss/index.scss'
-import 'bootstrap';
+import Forum from './Routes/View/client/Forum/Forums';
+import Recipe from './Routes/View/client/Recipe/Recipe';
+import Shop from './Routes/View/client/Shop/Shop';
+
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
               <Route path='/blog' element={<Blogs/>}/>
               <Route path='/about' element={<About/>}/>
               <Route path='/contact' element={<Contact/>}/>
+              <Route path='/recipe' element={<Recipe/>}/>
+              <Route path='/forum' element={<Forum/>}/>
+              <Route path='/shop' element={<Shop/>}/>
               <Route path='*' element={<Error/>}/>
         </Route>
         <Route path='/auth'>

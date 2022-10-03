@@ -1,0 +1,35 @@
+header{
+    height: 80px;
+    width: 100vw;
+    .header-socials-media{
+        width: 25%;
+        height: 100%;
+        ul{
+            .header-social-item{
+                svg{
+                    transition: all 0.3s;
+                    fill: #111;
+                    &:hover{
+                        fill: rgb(161, 161, 161);
+                    }
+                }
+            }
+        }
+    }
+    nav{
+        width: 50%;
+       
+        a{
+            color: #444;
+            font-weight: 500;
+        }
+    }
+    .auth{
+        width: 25%;
+        a{
+            color: #111;
+            font-weight: 500;
+            margin-right: 30px;
+        }
+    }
+}

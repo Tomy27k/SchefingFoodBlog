@@ -1,0 +1,16 @@
+.home-slider{
+    .splide__arrows, .splide__pagination{
+        display: none;
+    }
+    .splide-item{
+        width: 100vw;
+        height: calc(100vh - 80px);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .splide-content{
+            width: 30%;
+            margin-left: 10%;
+        }
+    }
+}

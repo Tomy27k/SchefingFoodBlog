@@ -3,8 +3,13 @@
     margin: 0;
     outline: none;
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
+    text-decoration: none !important;
+    list-style: none !important;
+    
+}
+html, body{
+    width: 100vw;
+    overflow-x: hidden;
 }
 $clr-1:#111;
 $clr-2:#222;
