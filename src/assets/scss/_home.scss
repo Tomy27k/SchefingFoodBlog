@@ -14,3 +14,22 @@
         }
     }
 }
+.blog-video{
+    width: 100vw;
+    min-height:100vh ;
+    background-color: #e1e1e1;
+    .product-md-card{
+        height: 450px;
+    }
+   .video{
+    width: 50%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+   }
+   .content{
+    width: 50%;
+   }
+}
