@@ -64,21 +64,10 @@ const Home = () => {
       <section className="blog-video d-flex  align-items-center">
         <div className="product-md-card   overflow-hidden container d-flex">
           <div className="video d-flex justify-content-center align-items-center" style={{backgroundImage: `url(${video})`}}>
-            <BsFillPlayCircleFill style={{width: '200px !imported' ,height : '200px !imported' }}/>
+            <BsFillPlayCircleFill style={{width: '50px ' ,height : '50px ' ,fill: '#eee' }}/>
           </div>
           <div className="content bg-light p-3 rounded mx-2 d-flex flex-column justify-content-center">
-            <div className="sup-title d-flex">
-              <div className="time d-flex align-items-center">
-              <BsFillClockFill />
-              <span className="mx-1">60 minutes</span>
-              </div>
-              <div className="tags d-flex align-items-center mx-3"><BsFillTagFill/>
-              <span className="mx-1 rounded rounded-pill bg-warning px-2">Waffles</span>
-              <span className="mx-1 rounded rounded-pill bg-danger text-white px-2">Bread</span>
-              <span className="mx-1 rounded rounded-pill bg-secondary text-white px-2">meat</span>
-              </div>
-            </div>
-            <div className="card--body">
+            <div className="card--body mb-4">
               <h1>Perfect homemade waffles</h1>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
@@ -86,6 +75,18 @@ const Home = () => {
                 impedit natus totam, molestiae quae repellendus, in, quo
                 recusandae nihil eum voluptatem esse.
               </p>
+            </div>
+            <div className="sup-title d-flex mt-4">
+              <div className="time d-flex align-items-center">
+              <BsFillClockFill />
+              <span className="mx-1">60 minutes</span>
+              </div>
+              <div className="tags d-flex align-items-center mx-3">
+              <BsFillTagFill/>
+              <span className="mx-1 rounded rounded-pill bg-warning px-2">Waffles</span>
+              <span className="mx-1 rounded rounded-pill bg-danger text-white px-2">Bread</span>
+              <span className="mx-1 rounded rounded-pill bg-secondary text-white px-2">meat</span>
+              </div>
             </div>
           </div>
         </div>

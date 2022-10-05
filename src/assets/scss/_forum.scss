@@ -1,0 +1,43 @@
+.forum-search{
+    width: 100vw;
+    min-height:calc(100vh - 80px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    .search-bar{
+        min-height: 100%;
+        
+        form{
+            .countries{
+                position: relative;
+                .country-search-zone{
+                    position: absolute;
+                     background-color: #333;
+                     color: #eee;
+                     top: 50px;
+                     width: 100% ;
+                     border-radius: 10px;
+                     ul{
+                        margin: 0;
+                        padding: 10px 20px;
+                        li{
+                            border: 1px #ddd solid;
+                            border-radius: 5px;
+                            margin-bottom: 10px;
+                            padding: 5px;
+                            a{
+                                display: flex;
+                                color: #eee;
+                                &:hover{
+                                    color: #ccc;   
+                                }
+                            }
+                            
+                        }
+                     }
+                }
+            }
+        }
+    }
+}
