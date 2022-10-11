@@ -33,7 +33,7 @@ const Register = () => {
            <div className="input-group-item">
            <input type="text" placeholder="Full Name "/>
             <input type="email"  placeholder="E-mail" />
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password" defaultValue='' />
             <input type="password" placeholder="Password Confirm" />
            </div>
             <button className="btn btn-success">Register </button>
@@ -41,6 +41,7 @@ const Register = () => {
         </div>
       </div>
     </main>
+
   );
 };
 
