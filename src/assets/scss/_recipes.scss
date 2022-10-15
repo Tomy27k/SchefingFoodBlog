@@ -1,0 +1,37 @@
+.recipe-items{
+width: 100vw;
+min-height:100vh ;
+    p{
+        width: 100%;
+        margin-top: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+                line-clamp: 3; 
+        -webkit-box-orient: vertical !important;
+    }
+    .recipe-details{
+       align-self: end;
+       justify-self: end;
+       display: flex;
+    }
+}
+.recipe-details-page{
+    width: 100vw;
+    min-height: 100vh;
+    .recipe-description{
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        &>div{
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            &>*:nth-child(odd){
+                margin-right: 4px;
+            }
+        }
+    }
+}

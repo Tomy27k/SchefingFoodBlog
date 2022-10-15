@@ -1,6 +1,7 @@
 import React,{useEffect,useState}from 'react'
 import { Link } from 'react-router-dom';
 import bgforum from "../../../../assets/images/worldfoof.png";
+import RecipeItems from './RecipeItems';
 
 
 const Recipe = () => {
@@ -29,6 +30,8 @@ const Recipe = () => {
           </form>
         </div>
       </section>
+      
+      
     </>
   )
 }
