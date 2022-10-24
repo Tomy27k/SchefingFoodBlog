@@ -1,7 +1,8 @@
 import React from 'react'
-import { Pie } from 'react-chartjs-2';
-import {Chart, ArcElement} from 'chart.js'
-Chart.register(ArcElement);
+import { Pie ,Radar} from 'react-chartjs-2';
+import {Chart, ArcElement,RadialLinearScale,PointElement,LineElement,Filler,Tooltip,Legend,} from 'chart.js'
+Chart.register(ArcElement,RadialLinearScale,PointElement,LineElement,Filler,Tooltip,Legend);
+
 const data={
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
@@ -34,7 +35,7 @@ const AdminDashboard = () => {
     <div className='admin-home d-flex flex-wrap gap-2'>
       <div className="card">
         <div className="card-body">
-          <Pie data={data}/>
+          <Radar data={data}/>
         </div>
         <div className="card-footer">
           Mekanizma

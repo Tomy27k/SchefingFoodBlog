@@ -13,8 +13,10 @@ import Recipe from "./Routes/View/client/Recipe/Recipe";
 import Shop from "./Routes/View/client/Shop/Shop";
 import RecipeItemsPage from "./Routes/View/client/Recipe/RecipeItemsPage";
 import RecipeDetails from "./Routes/View/client/Recipe/RecipeDetails";
-import AdminDashboard from "./Routes/View/admin/AdminDashboard";
+import AdminDashboard from "./Routes/View/admin/home/AdminDashboard";
 import LayoutAdmin from "./Routes/View/admin/LayoutAdmin";
+import AdminLogin from './Routes/View/admin/auth/Login'
+import Recipes from "./Routes/View/admin/Recipe/Recipes";
 
 function App() {
   const [adminLogin,setAdminLogin]= useState(true);
@@ -41,9 +43,10 @@ function App() {
         {adminLogin && 
             <Route path="admin" element={<LayoutAdmin/>}>
                 <Route path="/admin/" element={<AdminDashboard/>}/>  
+                <Route path="/admin/recipes" element={<Recipes/>}/>  
             </Route>
           }
-          <Route path="/admin/login">
+          <Route path="/admin/login" element={<AdminLogin/>}>
 
           </Route>
       </Routes>
