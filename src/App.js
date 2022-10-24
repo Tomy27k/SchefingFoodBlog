@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Routes/View/client/Layout/Layout";
 import Home from "./Routes/View/client/home/Home";
@@ -13,8 +13,11 @@ import Recipe from "./Routes/View/client/Recipe/Recipe";
 import Shop from "./Routes/View/client/Shop/Shop";
 import RecipeItemsPage from "./Routes/View/client/Recipe/RecipeItemsPage";
 import RecipeDetails from "./Routes/View/client/Recipe/RecipeDetails";
+import AdminDashboard from "./Routes/View/admin/AdminDashboard";
+import LayoutAdmin from "./Routes/View/admin/LayoutAdmin";
 
 function App() {
+  const [adminLogin,setAdminLogin]= useState(true);
   return (
     <div>
       <Routes>
@@ -35,6 +38,14 @@ function App() {
           <Route path="/auth/register" element={<Register />} />
           <Route path="/auth/login" element={<Login />} />
         </Route>
+        {adminLogin && 
+            <Route path="admin" element={<LayoutAdmin/>}>
+                <Route path="/admin/" element={<AdminDashboard/>}/>  
+            </Route>
+          }
+          <Route path="/admin/login">
+
+          </Route>
       </Routes>
     </div>
   );

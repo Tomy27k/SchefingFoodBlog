@@ -1,0 +1,25 @@
+.admin-header{
+    width: 100vw;
+    height: 70px;
+    ul{
+
+    }
+}
+.admin-main{
+    width: 100vw;
+    min-height:calc(100vh - 70px);
+   
+    .admin-aside{
+        width: 250px;
+        overflow: hidden;
+        background-color: #eee;
+    }
+}
+.admin-home{
+    padding: 30px;
+    canvas{
+        width: 350px !important;
+        height: 350px !important;
+
+    }
+}

@@ -16,6 +16,7 @@ const RecipeDetails = ({title,time,delicios,piece,img_src,menu,content,ingredien
                     </div>
                     <div className="delicios">
                         <BiLike/>
+                       
                         <span>{delicios}</span>
                     </div>
                     <div className="piece">
