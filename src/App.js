@@ -16,7 +16,9 @@ import RecipeDetails from "./Routes/View/client/Recipe/RecipeDetails";
 import AdminDashboard from "./Routes/View/admin/home/AdminDashboard";
 import LayoutAdmin from "./Routes/View/admin/LayoutAdmin";
 import AdminLogin from './Routes/View/admin/auth/Login'
-import Recipes from "./Routes/View/admin/Recipe/Recipes";
+import RecipesIndex from "./Routes/View/admin/Recipe/RecipeIndex";
+import RecipeCreate from "./Routes/View/admin/Recipe/RecipeCreate";
+import RecipeEdit from "./Routes/View/admin/Recipe/RecipeEdit";
 
 function App() {
   const [adminLogin,setAdminLogin]= useState(true);
@@ -41,9 +43,11 @@ function App() {
           <Route path="/auth/login" element={<Login />} />
         </Route>
         {adminLogin && 
-            <Route path="admin" element={<LayoutAdmin/>}>
+            <Route  element={<LayoutAdmin/>}>
                 <Route path="/admin/" element={<AdminDashboard/>}/>  
-                <Route path="/admin/recipes" element={<Recipes/>}/>  
+                <Route path="/admin/recipes" element={<RecipesIndex/>}/>  
+                <Route path="/admin/recipe-create" element={<RecipeCreate/>}/>  
+                <Route path="/admin/recipe-edit/:id" element={<RecipeEdit/>}/>  
             </Route>
           }
           <Route path="/admin/login" element={<AdminLogin/>}>

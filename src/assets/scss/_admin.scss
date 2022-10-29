@@ -5,6 +5,7 @@
 
     }
 }
+
 .admin-login{
     width: 100vw;
     height: 100vh;
@@ -15,7 +16,11 @@
 .admin-main{
     width: 100vw;
     min-height:calc(100vh - 70px);
-   
+    &> section{
+        width: calc(100vw - 220px);
+        height: calc(100vh - 70px);
+        overflow-y: scroll;
+    }
     .admin-aside{
         min-width: 220px;
         overflow: hidden;

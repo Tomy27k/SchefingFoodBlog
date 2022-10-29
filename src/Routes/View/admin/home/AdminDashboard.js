@@ -32,7 +32,7 @@ const data={
 const AdminDashboard = () => {
   
   return (
-    <div className='admin-home d-flex flex-wrap gap-2'>
+    <section className='admin-home d-flex flex-wrap gap-2'>
       <div className="card">
         <div className="card-body">
           <Radar data={data}/>
@@ -68,7 +68,7 @@ const AdminDashboard = () => {
       
 
   
-    </div>
+    </section>
   )
 }
 
