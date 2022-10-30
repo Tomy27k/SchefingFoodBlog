@@ -2,27 +2,22 @@ import React,{useState,useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
-
-const RecipeCreate = () => {
-  const [postData,setPostData]=useState({});
-  const { register, handleSubmit} = useForm();
-  const onSubmit = data => {
-   
-   
-    axios({
-      method:'post',
-      url:'http://localhost:3001/recipes/recipe-create',
-      data: data,
-  
-    }).then((response) => console.log(response))
-    .catch((err)=> console.error(err))
-  };
-
-const handleClick=()=>{
-  
-}
-  
-
+const ForumCreate = () => {
+    
+        const [postData,setPostData]=useState({});
+        const { register, handleSubmit} = useForm();
+        const onSubmit = data => {
+         
+         
+          axios({
+            method:'post',
+            url:'http://localhost:3001/recipes/recipe-create',
+            data: data,
+        
+          }).then((response) => console.log(response))
+          .catch((err)=> console.error(err))
+        };
+      
   return (
     <section className='p-4 w-100'>
 
@@ -68,12 +63,12 @@ const handleClick=()=>{
               </label>
               <input type="text" {...register("service")}  className="form-control" id="service" />
             </div>
-            <input type="submit" value='Create' onClick={handleClick} className="btn mt-4 btn-lg btn-outline-success"/>
+            <input type="submit" value='Create'  className="btn mt-4 btn-lg btn-outline-success"/>
           </form>
         </div>
       </div>
     </section>
-  )
-}
+  )}
 
-export default RecipeCreate
+
+export default ForumCreate

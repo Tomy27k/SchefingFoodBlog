@@ -19,6 +19,8 @@ import AdminLogin from './Routes/View/admin/auth/Login'
 import RecipesIndex from "./Routes/View/admin/Recipe/RecipeIndex";
 import RecipeCreate from "./Routes/View/admin/Recipe/RecipeCreate";
 import RecipeEdit from "./Routes/View/admin/Recipe/RecipeEdit";
+import ForumIndex from "./Routes/View/admin/Forum/ForumIndex";
+import ForumEdit from "./Routes/View/admin/Forum/ForumEdit";
 
 function App() {
   const [adminLogin,setAdminLogin]= useState(true);
@@ -48,6 +50,8 @@ function App() {
                 <Route path="/admin/recipes" element={<RecipesIndex/>}/>  
                 <Route path="/admin/recipe-create" element={<RecipeCreate/>}/>  
                 <Route path="/admin/recipe-edit/:id" element={<RecipeEdit/>}/>  
+                <Route path="/admin/forum" element={<ForumIndex/>}/>
+                <Route path="/admin/forum-edit/:id" element={<ForumEdit/>}/>
             </Route>
           }
           <Route path="/admin/login" element={<AdminLogin/>}>
