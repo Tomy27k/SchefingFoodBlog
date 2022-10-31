@@ -2,22 +2,22 @@ import React,{useState,useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
-
-const RecipeCreate = () => {
-  const [postData,setPostData]=useState({});
-  const { register, handleSubmit} = useForm();
-  const onSubmit = data => {
-   
-   
-    axios({
-      method:'post',
-      url:'http://localhost:3001/recipes/recipe-create',
-      data: data,
+const ShopProductCreate = () => {
   
-    }).then((response) => console.log(response))
-    .catch((err)=> console.error(err))
-  };
-
+    
+    const [postData,setPostData]=useState({});
+    const { register, handleSubmit} = useForm();
+    const onSubmit = data => {
+     
+     
+      axios({
+        method:'post',
+        url:'http://localhost:3001/recipes/recipe-create',
+        data: data,
+    
+      }).then((response) => console.log(response))
+      .catch((err)=> console.error(err))
+    };
   return (
     <section className='p-4 w-100'>
 
@@ -71,4 +71,4 @@ const RecipeCreate = () => {
   )
 }
 
-export default RecipeCreate
+export default ShopProductCreate

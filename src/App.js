@@ -21,6 +21,14 @@ import RecipeCreate from "./Routes/View/admin/Recipe/RecipeCreate";
 import RecipeEdit from "./Routes/View/admin/Recipe/RecipeEdit";
 import ForumIndex from "./Routes/View/admin/Forum/ForumIndex";
 import ForumEdit from "./Routes/View/admin/Forum/ForumEdit";
+import ShopIndex from "./Routes/View/admin/Shop/ShopIndex";
+import ShopProductCreate from "./Routes/View/admin/Shop/ShopProductCreate";
+import ShopProductEdit from "./Routes/View/admin/Shop/ShopProductEdit";
+import ShopCategoryCreate from "./Routes/View/admin/Shop/ShopCategoryCreate";
+import AboutIndex from "./Routes/View/admin/About/AboutIndex";
+import AboutCreate from "./Routes/View/admin/About/AboutCreate";
+import AboutEdit from "./Routes/View/admin/About/AboutEdit";
+import UserIndex from "./Routes/View/admin/User/UserIndex";
 
 function App() {
   const [adminLogin,setAdminLogin]= useState(true);
@@ -45,13 +53,21 @@ function App() {
           <Route path="/auth/login" element={<Login />} />
         </Route>
         {adminLogin && 
-            <Route  element={<LayoutAdmin/>}>
+            <Route element={<LayoutAdmin/>}>
                 <Route path="/admin/" element={<AdminDashboard/>}/>  
                 <Route path="/admin/recipes" element={<RecipesIndex/>}/>  
                 <Route path="/admin/recipe-create" element={<RecipeCreate/>}/>  
                 <Route path="/admin/recipe-edit/:id" element={<RecipeEdit/>}/>  
                 <Route path="/admin/forum" element={<ForumIndex/>}/>
                 <Route path="/admin/forum-edit/:id" element={<ForumEdit/>}/>
+                <Route path="/admin/shop/" element={<ShopIndex/>}/>
+                <Route path="/admin/shop/product-create" element={<ShopProductCreate/>}/>
+                <Route path="/admin/shop/product-edit/:id" element={<ShopProductEdit/>}/>
+                <Route path="/admin/shop/category-create" element={<ShopCategoryCreate/>}/>
+                <Route path="/admin/about/" element={<AboutIndex/>}/>
+                <Route path="/admin/about-create" element={<AboutCreate/>}/>
+                <Route path="/admin/about-edit/:id" element={<AboutEdit/>}/>
+                <Route path="/admin/user" element={<UserIndex/>}/>
             </Route>
           }
           <Route path="/admin/login" element={<AdminLogin/>}>
