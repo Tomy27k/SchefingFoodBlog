@@ -1,0 +1,21 @@
+.shop-page{
+    width: 100vw;
+    min-height: 100vh;
+}
+.product-item{
+    .product-image{
+        
+    }
+    .product-content{
+        width: calc(100% - 120px);
+        p{
+            
+         overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; 
+                line-clamp: 1; 
+        -webkit-box-orient: vertical;
+        }
+    }
+}
