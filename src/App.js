@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, } from "react-router-dom";
 import Layout from "./Routes/View/client/Layout/Layout";
 import Home from "./Routes/View/client/home/Home";
 import Blogs from "./Routes/View/client/blog/Blogs";
@@ -32,6 +32,7 @@ import UserIndex from "./Routes/View/admin/User/UserIndex";
 
 function App() {
   const [adminLogin,setAdminLogin]= useState(true);
+  
   return (
     <div>
       <Routes>
@@ -43,7 +44,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/recipe/products" element={<RecipeItemsPage />} />
-          <Route path="/recipe/products/:id" element={<RecipeDetails />} />
+          <Route path="/recipe/products/:recipeId" element={<RecipeDetails />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="*" element={<Error />} />
@@ -62,7 +63,7 @@ function App() {
                 <Route path="/admin/forum-edit/:id" element={<ForumEdit/>}/>
                 <Route path="/admin/shop/" element={<ShopIndex/>}/>
                 <Route path="/admin/shop/product-create" element={<ShopProductCreate/>}/>
-                <Route path="/admin/shop/product-edit/:id" element={<ShopProductEdit/>}/>
+                <Route path="/admin/shop/product-edit/:editId" element={<ShopProductEdit/>}/>
                 <Route path="/admin/shop/category-create" element={<ShopCategoryCreate/>}/>
                 <Route path="/admin/about/" element={<AboutIndex/>}/>
                 <Route path="/admin/about-create" element={<AboutCreate/>}/>
