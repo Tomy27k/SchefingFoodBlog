@@ -72,7 +72,7 @@ function App() {
             </Route>
           }
           <Route path="/admin/login" element={<AdminLogin/>}>
-
+              
           </Route>
       </Routes>
     </div>

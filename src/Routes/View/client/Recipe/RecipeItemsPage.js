@@ -22,7 +22,7 @@ const RecipeItemsPage = () => {
               button='nasil'
             />
 
-  
+    
 
         </div>
       </section>
