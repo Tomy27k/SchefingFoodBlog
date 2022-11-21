@@ -14,6 +14,7 @@ const RecipeItemsPage = () => {
               tag={['halil','toma','caitlin','tencate']}
               button="Details"
             />
+
             <RecipeItems
               title='halil'
               content='loremdask lopfdsfgijpdsk gl;dfsjkglo;kds;kd;gkl;dks;fk;dskf;k sd;kf;dsfkldsg ldsfosdjuf iojfkowufgsdofgksfoasflsdfjsdflo;sdfgjo jlgjuewf;wefgldswglwej gpkwfgkw;ékflsjdgkadasda jsuflojsdd lgjldsjgldjslgjlsdjgl jdlsjg'
@@ -21,7 +22,13 @@ const RecipeItemsPage = () => {
               tag={['halil','toma','caitlin','tencate']}
               button='nasil'
             />
-
+            <RecipeItems
+              title='halil'
+              content='loremdask lopfdsfgijpdsk gl;dfsjkglo;kds;kd;gkl;dks;fk;dskf;k sd;kf;dsfkldsg ldsfosdjuf iojfkowufgsdofgksfoasflsdfjsdflo;sdfgjo jlgjuewf;wefgldswglwej gpkwfgkw;ékflsjdgkadasda jsuflojsdd lgjldsjgldjslgjlsdjgl jdlsjg'
+              img_src={bgforum}
+              tag={['halil','toma','caitlin','tencate']}
+              button='nasil'
+            />
     
 
         </div>

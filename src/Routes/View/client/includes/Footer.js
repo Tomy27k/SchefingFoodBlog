@@ -4,15 +4,16 @@ import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
 import { useMap } from 'react-leaflet/hooks'
 const Footer = () => {
-
+const tel='tel:+432423423'
   return (
-    <footer className='bg-dark text-light'>
-      <div className="footer-top d-flex justify-content-between p-4">
+    <footer className='bg-dark text-light '>
+      <div className="footer-top d-flex flex-wrap justify-content-between p-4">
         <ul className='contact-information  d-flex flex-column p-0 justify-content-center'>
-          <li className='my-1'><Link className='text-white btn btn-outline-warning' to='/recipe'>Recipe Page </Link></li>
-          <li className='my-1'><Link className='text-white btn btn-outline-warning' to='/forum'>Forum Page</Link></li>
-          <li className='my-1'><Link className='text-white btn btn-outline-warning' to='/shop'>Shop Page</Link></li>
-          <li className='my-1'><Link className='text-white btn btn-outline-warning' to='/contact'>Contact</Link></li>
+          <li className='mt-1'><p className='m-0 h3 text-bg-light rounded p-1'>Schefing Corporation</p></li>
+          <li className='mt-1'><p className='m-0'>Los Angeles | California</p></li>
+          <li className='mt-1'><p className='m-0'><a href={tel} className='text-warning'>+1 (756) 43 43</a></p></li>
+          <li className='mt-1'><p className='m-0'></p></li>
+          
           
         </ul>
         <div className="map position-relative" id='map'>

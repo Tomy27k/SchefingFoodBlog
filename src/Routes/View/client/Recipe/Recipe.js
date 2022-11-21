@@ -32,13 +32,16 @@ if(input.length == 0){
   setSearchClass('recipe-content-show d-none')
 }
 }
+const classe =()=>{
+  setSearchClass('recipe-content-show d-none bg-light')
+}
   return (
     <>
     <section className='recipe-home d-flex justify-content-center align-items-center' style={{backgroundImage:`url(${bgforum})`}}>
       <div  className="recipe-search-bar position-relative border-4 hover border border-danger d-flex gap-4 p-3 bg-light rounded-pill">
-          <input className='form-control' placeholder='Recipe name enter' type="text"  onChange={handleChange} />
-          <button className='btn btn-danger'>Search</button>
-          <div className={searchClass} >
+          <input className='form-control' placeholder='Recipe name enter' type="text"   onChange={handleChange} />
+          <Link to='/recipe/products' className='btn btn-danger '>Recipe All Show</Link>
+          <div className={searchClass} onMouseLeave={()=>setSearchClass('recipe-content-show d-none bg-light')} >
           <ul className='px-4 m-0 d-flex flex-column'>
               { inputData!==''  &&
                 inputData.map((item,index)=>(

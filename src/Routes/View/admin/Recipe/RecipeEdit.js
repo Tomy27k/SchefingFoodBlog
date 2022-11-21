@@ -1,8 +1,13 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import {BsFillTrashFill} from 'react-icons/bs'
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
+import axios from "axios";
 
 const RecipeEdit = () => {
+  let { id } = useParams();
+  const [isLoading,setIsLoading] = useState(false);
+  const [datas,setDatas]=useState([])
+
 const [recipe, setRecipe] = useState(
   {title: 'Apple turtle',
   content: 'loremdasjkdjkalsjdkl',
@@ -16,12 +21,26 @@ const [recipe, setRecipe] = useState(
     title:'cok kotu'
 }]},
 )
+useEffect(() => {
+  axios.get('http://localhost:3001/recipe/show')
+  .then(res=>{
+    setDatas(res.data.find((item)=>{
+      return item._id === id
+    }))
+  })
+  .then(()=>{
+    setIsLoading(true)
+  })
+  .catch(err=>console.error(err))
+  
+},[]);
 
 
   return (
     <section className="p-4 admin-panel ">
       <div className="task-title mb-4 p-2 bg-dark text-white rounded rounded-3 border">
         <div className="h3">Recipe Edit </div>
+      
       </div>
       <div className="card ">
         <div className="card-body  ">
@@ -30,38 +49,21 @@ const [recipe, setRecipe] = useState(
               <label htmlFor="Title" className="form-label">
                 Title
               </label>
-              <input type="text" defaultValue={recipe.title} className="form-control" id="Title" />
+              <input type="text" defaultValue={datas.title}  className="form-control" id="Title" />
             </div>
             <div className="my-2">
               <label htmlFor="Content" className="form-label">
                 Content
               </label>
-              <input type="text" defaultValue={recipe.content}  className="form-control" id="Content" />
+              <textarea type="text" defaultValue={datas.content}  className="form-control" id="Content" >{datas.content}</textarea>
             </div>
             <div className="my-2">
-              <input type="checkbox" defaultChecked={recipe.active}  id="IsActive" className="me-3" />
+              <input type="checkbox" defaultChecked={datas.active}  id="IsActive" className="me-3" />
               <label htmlFor="IsActive" className="form-label">
                 Active ?
               </label>
             </div>
-            <div className="my-2">
-              <label htmlFor="timer" className="form-label">
-                Timer
-              </label>
-              <input type="text" defaultValue={recipe.timer}  className="form-control" id="timer" />
-            </div>
-            <div className="my-2">
-              <label htmlFor="piece" className="form-label">
-                Piece
-              </label>
-              <input type="text" defaultValue={recipe.piece}  className="form-control" id="piece" />
-            </div>
-            <div className="my-2">
-              <label htmlFor="service" className="form-label">
-                Service
-              </label>
-              <input type="text" defaultValue={recipe.service}  className="form-control" id="service" />
-            </div>
+            
             <button type="submit" className="btn mt-4 btn-lg btn-outline-success">Edit</button>
           </form>
           

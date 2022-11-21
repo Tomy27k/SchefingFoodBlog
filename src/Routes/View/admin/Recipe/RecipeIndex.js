@@ -1,7 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React,{useEffect,useState} from 'react'
+import { Link,  } from 'react-router-dom'
+import axios from 'axios'
 
 const RecipesIndex = () => {
+const [datas,setDatas]=useState([])
+const [isLoading,setIsLoading] = useState(false);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/recipe/show')
+    .then(res=>{
+      setDatas(res.data)
+    })
+    .then(()=>{
+      setIsLoading(true)
+    })
+    .catch(err=>console.error(err))
+    
+  },[]);
   return (
     <section className='p-4 w-100  '>
        <div className="task-title mb-4 p-2 bg-dark text-white rounded rounded-3 d-flex justify-content-between  border">
@@ -21,20 +36,21 @@ const RecipesIndex = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Title1</td>
-              <td>Lorem ipsum dolor sit amet.</td>
-              <td>True</td>
-              <td>02.02.1992</td>
-              <td><Link to="/admin/recipe-edit/1" className='btn btn-warning'>Details...</Link></td>
+            
+           {
+            datas.map((item,index)=>(
+              <tr>
+              <td>{item.title}</td>
+              <td>{item.content}</td>
+              <td>{item.active}</td>
+              <td>{item.created_at}</td>
+              <td><Link to={`/admin/recipe-edit/${item._id}`} className='btn btn-warning'>Details...</Link></td>
             </tr>
-            <tr>
-              <td>Title2</td>
-              <td>Lorem ipsum dolor sit amet.</td>
-              <td>False</td>
-              <td>02.02.1982</td>
-              <td><Link to="/admin/recipe-edit/1" className='btn btn-warning'>Details...</Link></td>
-            </tr>
+            ))
+           }
+           {/* {
+            JSON.stringify(datas)
+           } */}
           </tbody>
        </table>
     </section>

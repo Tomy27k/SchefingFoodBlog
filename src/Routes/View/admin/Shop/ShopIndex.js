@@ -11,10 +11,11 @@ const ShopIndex = () => {
       
       setShopData(res.data)
     })
-    .catch(err=>console.error(err))
-    .finally(()=>{
+    .then(()=>{
       setIsLoading(true);
     })
+    .catch(err=>console.error(err))
+    
   },[]);
 
   if(isLoading === false){

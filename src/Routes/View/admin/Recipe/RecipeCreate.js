@@ -1,26 +1,33 @@
 import React,{useState,useEffect} from 'react'
 import { useForm } from "react-hook-form";
 import axios from 'axios';
-
+import { useNavigate,Redirect  } from 'react-router-dom';
+import { GiConsoleController } from 'react-icons/gi';
+import { Editor } from 'react-draft-wysiwyg';
+import ControlledEditor from '../../../../components/RichText/RichTextEditor'
 
 const RecipeCreate = () => {
   const [postData,setPostData]=useState({});
   const { register, handleSubmit} = useForm();
+ 
+  const navigate=useNavigate();
+  // const navigation = useNavigation();
+ 
   const onSubmit = data => {
-   
-   
+    console.log(data)
     axios({
       method:'post',
-      url:'http://localhost:3001/recipes/recipe-create',
+      url:'http://localhost:3001/recipe/create',
       data: data,
   
-    }).then((response) => console.log(response))
+    }).then((response) =>navigate('/admin/recipes'))
     .catch((err)=> console.error(err))
+    .finally(()=>{
+    })
   };
 
   return (
     <section className='p-4 w-100'>
-
 <div className="task-title mb-4 p-2 bg-dark text-white rounded rounded-3 border">
           <div className="h3">Recipe Create </div>
        </div>
@@ -37,7 +44,7 @@ const RecipeCreate = () => {
               <label htmlFor="Content" className="form-label">
                 Content
               </label>
-              <input type="text"  {...register("content")}  className="form-control" id="Content" />
+              <textarea type="text"  {...register("content")}  className="form-control" id="Content" ></textarea>
             </div>
             <div className="my-2">
               <input type="checkbox" {...register("active")} id="IsActive" className="me-3" />
@@ -45,24 +52,15 @@ const RecipeCreate = () => {
                 Active ?
               </label>
             </div>
-            <div className="my-2">
-              <label htmlFor="timer"  className="form-label">
-                Timer
-              </label>
-              <input type="number" {...register("timer")} placeholder='Only Number'  className="form-control" id="timer" />
-            </div>
-            <div className="my-2">
-              <label htmlFor="piece" className="form-label">
-                Piece
-              </label>
-              <input type="number" {...register("piece")} pattern="[0-9]*"  placeholder='Only Number' className="form-control" id="piece" />
-            </div>
-            <div className="my-2">
-              <label htmlFor="service" className="form-label">
-                Service
-              </label>
-              <input type="text" {...register("service")}  className="form-control" id="service" />
-            </div>
+            <Editor
+            style={{width: '300px;',height:'400px'}}
+  wrapperClassName="wrapper-class"
+  editorClassName="editor-class"
+  toolbarClassName="toolbar-class"
+  
+/>
+            
+            
             <input type="submit" value='Create'  className="btn mt-4 btn-lg btn-outline-success"/>
           </form>
         </div>
