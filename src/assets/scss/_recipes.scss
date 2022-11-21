@@ -35,3 +35,26 @@ min-height:100vh ;
         }
     }
 }
+.recipe-home{
+    width: 100vw;
+    min-height: calc(100vh - 80px);
+    background: center no-repeat;
+    background-size: cover;
+    .recipe-search-bar{
+        width: 500px;
+        min-width: 300px;
+        height: 80px;
+    }
+    .recipe-content-show{
+        border: 1px red solid;
+        position: absolute;
+        border-radius: 30px;
+        top:75px;
+        left: 0;
+        right: 0;
+        z-index: 999321312312;
+
+       
+
+    }
+}
