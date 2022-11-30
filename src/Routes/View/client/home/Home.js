@@ -26,7 +26,7 @@ const Home = () => {
                     animi? Facilis, perspiciatis laborum accusamus deleniti rem
                     pariatur aperiam asperiores officiis numquam, repudiandae
                     debitis. Dolores?
-                    loremsadas
+                    loremsadassadasdasd
                   </p>
                 </div>
               </div>
